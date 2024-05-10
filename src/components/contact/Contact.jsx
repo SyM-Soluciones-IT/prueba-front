@@ -22,7 +22,7 @@ const ContactForm = ({isHome=false}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contacto', { name, email, message, asunto });
+      await axios.post('http://penamatias.alwaysdata.net/api/contacto/', { name, email, message, asunto });
       alert('Message sent successfully!');
       setName('');
       setAsunto('');
