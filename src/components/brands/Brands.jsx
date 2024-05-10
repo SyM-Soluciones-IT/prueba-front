@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, CardImg, CardBody } from 'react-bootstrap';
+import { getBrands } from '../../services/services';
 import './Brands.css';
 
 const MarcaList = () => {
@@ -12,8 +13,8 @@ const MarcaList = () => {
 
   const obtenerMarcas = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/marcas');
-      setMarcas(response.data);
+      const response = await getBrands();
+      setMarcas(response);
     } catch (error) {
       console.error('Error al obtener las marcas:', error);
     }

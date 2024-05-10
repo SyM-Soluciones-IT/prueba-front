@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-infinite-logo-slider';
 import axios from 'axios';
 import { Card, CardImg, CardBody } from 'react-bootstrap'; // Importa componentes de tarjeta de Reactstrap o la librería que estés utilizando
+import { getClients } from '../../services/services';
 import '../brands/Brands.css';
 
 const ClientesList = () => {
@@ -13,8 +14,8 @@ const ClientesList = () => {
 
   const obtenerClientes = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/clientes');
-      setClientes(response.data);
+      const response = await getClients();
+      setClientes(response);
     } catch (error) {
       console.error('Error fetching clientes:', error);
     }

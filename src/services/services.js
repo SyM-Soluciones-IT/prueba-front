@@ -15,6 +15,7 @@ export const subscribeToNewsletter = async (email) => {
 export async function getBrands() {
   try {
     const response = await axios.get(`${API_BASE_URL}/marcas`);
+    console.log(response.data)
     return response.data;
   } catch (error) {
     console.error('Error al obtener las marcas:', error);
@@ -45,5 +46,14 @@ export async function getVehicles(category){
     return response.data;
   } catch (error) {
     console.error('Error al obtener los vehículos:', error);
+  }
+}
+
+export async function getClients(){
+  try {
+    const response = await axios.get(`${API_BASE_URL}/clientes`);
+    return response.data;
+  } catch (error) {
+    console.error('Error al obtener los clientes:', error);
   }
 }
