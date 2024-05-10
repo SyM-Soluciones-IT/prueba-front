@@ -1,0 +1,108 @@
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  padding: 50px 0; /* Ajusta el padding según sea necesario */
+  text-align: center;
+}
+
+.footer h5 {
+  color: #ca173e; /* Color de título blanco */
+  font-size: 1.3em; /* Tamaño de fuente del título */
+  margin-bottom: 20px; /* Espaciado inferior del título */
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style: none; /* Sin viñetas */
+  padding: 0;
+  text-align: center;
+  font-size: large;
+}
+
+.footer ul li {
+  margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+}
+.footer p{
+  font-size: 1.1em;
+}
+
+.footer a {
+  color: #fff; /* Color de enlaces blanco */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s; /* Transición suave de color */
+}
+
+.footer a:hover {
+  color: #ccc; /* Cambia el color al pasar el ratón por encima */
+}
+
+/* Formulario de suscripción */
+.footer form {
+  display: flex; /* Mostrar los elementos en línea */
+  align-items: center; /* Centrar verticalmente */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.footer form input[type="email"] {
+  background-color: #fff; /* Fondo blanco para input */
+  color: #000; /* Texto negro para input */
+  border: none; /* Sin borde */
+  padding: 10px; /* Ajusta el padding según sea necesario */
+  flex: 1; /* Expandir el input para ocupar el espacio disponible */
+  width: 70%;
+  max-width: 250px;
+}
+
+.footer form button {
+  background-color: #007bff; /* Fondo azul para botón */
+  color: #fff; /* Texto blanco para botón */
+  border: none; /* Sin borde */
+  padding: 10px; /* Ajusta el padding según sea necesario */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  width: fit-content; /* Ancho completo */
+  overflow-x: dotted;
+}
+
+.footer form button:hover {
+  background-color: #0056b3; /* Cambia el color al pasar el ratón por encima */
+}
+
+/* Iconos de redes sociales */
+.footer .social-icons {
+  display: flex; /* Mostrar los iconos en línea */
+  justify-content: center; /* Centrar horizontalmente */
+  margin-top: 20px; /* Espaciado superior */
+}
+
+.footer .social-icons a {
+  display: inline-block; /* Mostrar los iconos como elementos en línea */
+  margin: 0 20px; /* Espaciado horizontal entre iconos */
+  text-decoration: none;
+  color: #fff; /* Color de enlaces blancos */
+}
+
+/* YouTube */
+.footer .social-icons a.youtube svg {
+  width: 40px; /* Tamaño de los iconos */
+  height: 40px;
+  fill: #ff0000; /* Color rojo de YouTube */
+  transition: fill 0.3s; /* Transición suave de color */
+}
+
+/* Instagram */
+.footer .social-icons a.instagram svg {
+  width: 40px; /* Tamaño de los iconos */
+  height: 40px;
+  fill: #833ab4; /* Color de Instagram */
+  transition: fill 0.3s; /* Transición suave de color */
+}
+
+.footer .social-icons a svg:hover {
+  fill: #ccc; /* Cambia el color al pasar el ratón por encima */
+}

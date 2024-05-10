@@ -1,0 +1,42 @@
+/* Estilos para la tarjeta de categoría */
+
+.category-card {
+  border: none; /* Elimina el borde de la tarjeta */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+  position: relative;
+}
+
+/* Estilos para la imagen de la categoría */
+.category-image {
+  transition: transform 0.3s; /* Agrega una transición suave */
+  height: 260px; /* Ajusta la altura de la imagen de la categoría */
+  width: 210px; /* Ajusta el ancho de la imagen de la categoría */
+  border-radius: 10px;
+}
+
+/* Estilos para el enlace de la categoría */
+.category-link {
+  text-decoration: none; /* Elimina la decoración de texto del enlace */
+  color: inherit; /* Hereda el color del texto del padre */
+  text-align: center;
+}
+
+.category-card.card{
+  width: 40%;
+}
+
+
+.category-title{
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .category-image:hover{
+    transform: scale(0.9); /* Reduce el tamaño de la imagen al pasar el ratón */
+  }
+}
+
+
+

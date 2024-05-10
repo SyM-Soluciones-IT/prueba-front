@@ -1,0 +1,68 @@
+.principal-titulo-seccion {
+  display: flex !important;
+}
+
+.intro-repuestos {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.repuestos-texto {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 0px 5%;
+}
+
+.tarjeta {
+  border: 1px solid #101010;
+  width: 80%; /* Cambia el ancho a 100% para que ocupe todo el ancho en pantallas pequeñas */
+  background-color: #ca173e;
+  color: white;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  align-content: space-between !important;
+}
+
+.tarjeta-body{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+img {
+  height: 100%;
+  max-width: 100%; /* Asegura que la imagen no se desborde en pantallas pequeñas */
+}
+
+.contenedor-top {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  justify-content: space-evenly;
+}
+.imagen-repuestos{
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  /* Estilos para pantallas de tamaño medio */
+  .tarjeta {
+    width: 45%; /* Restaura el ancho original en pantallas medianas y grandes */
+  }
+}
+
+@media (min-width: 992px) {
+  /* Estilos para pantallas grandes */
+  .contenedor-top {
+    width: 80%; /* Ajusta el ancho del contenedor en pantallas grandes */
+  }
+  
+}

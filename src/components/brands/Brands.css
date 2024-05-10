@@ -1,0 +1,57 @@
+/* .centered-slider {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+} */
+
+.centered-slide {
+  margin-right: 1em;
+}
+
+.centered-slide:last-of-type {
+  margin-right: 0;
+}
+
+.marca-list {
+  display: flex;
+  background-color: #ca173e;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+.marca-item {
+  margin: 10px;
+  max-width: 200px;
+  max-height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-card {
+  width: 200px; /* Ancho fijo de la tarjeta */
+  height: 220px; /* Altura fija de la tarjeta */
+  text-align: center;
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  margin: 10px;
+}
+
+.image-card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+  height: 100%; /* Ajuste de altura */
+
+}
+
+
+.card-img {
+  max-width: 100%; /* Ancho máximo de la imagen */
+  max-height: 100%; /* Altura máxima de la imagen */
+  width: auto;
+  height: auto;
+}
+
+

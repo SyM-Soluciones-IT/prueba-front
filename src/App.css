@@ -1,0 +1,18 @@
+.principal-titulo-seccion{
+  background-color: #ca173e;
+  color: white;
+  justify-content: center;
+  width: 100vw;
+  font-size: 2em;
+  font-family: 'Poppins', sans-serif;;
+  font-weight: 700;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 1em;
+}
+
+.btn-primary{
+  background-color: #ca173e;
+  color: white;
+}
+

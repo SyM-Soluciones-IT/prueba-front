@@ -1,0 +1,161 @@
+header{
+  background-color: #ffffff !important;
+  position: sticky;
+  top: 0px!important;
+  z-index: 100;
+}
+
+.logo-bahia{
+  height: 85px !important;
+}
+
+h1{
+  display: none;
+  font-family: 'Poppins', sans-serif;;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.header-logo{
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.nav-link{
+  border-radius: 0.5rem;
+}
+
+.nav-item.dropdown .dropdown-toggle {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+}
+
+/* Estilos específicos para la barra de navegación móvil */
+.mobile-navbar {
+  background-color: #101010;
+  color: white;
+  position: sticky;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.mobile-navbar .nav-link {
+  text-decoration: none;
+  color: white;
+  margin-right: 0px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.nav-right{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  position: fixed !important;
+  top: 90px !important;
+  right: 20px !important;
+  margin-top: 8px;
+}
+
+.mobile-navbar .nav-link:last-child {
+  margin-right: 0px;
+}
+
+.nav-link-inicio{
+  margin-top: 10px;
+}
+
+
+.dropdown{
+  display: flex;
+  align-items: center !important;
+}
+
+#nav-dropdown{
+  color: white !important;
+}
+
+.dropdown-menu{
+  background-color: #101010 !important;
+  color: white !important;
+  border: transparent !important;
+  padding: 0 0.5rem;
+}
+.navbar-nav .dropdown-menu{
+  position: absolute;
+}
+
+.dropdown-toggle::after {
+  font-size: 1.5rem; /* Ajusta el tamaño del icono */
+}
+
+.dropdown-item{
+  color: white;
+}
+
+.active.dropdown-item{
+  background-color: #ca173e;
+  border-radius: 0.5rem;
+}
+
+.nav-link-categorias{
+  border-radius: 0;
+}
+
+
+
+
+@media (min-width: 540px){
+  h1{
+    display: block;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 992px) {
+  .mobile-navbar {
+    height: 56px;
+  }
+
+  .nav-link:hover, .nav-link.active{
+    color: white !important;
+    background-color: #ca173e !important;
+    border-radius: 0.5rem;
+  }
+
+
+  .navbar-nav .dropdown-menu{
+    position: static;
+  }
+
+  .ml-auto .nav-link {
+    margin-top: 0!important; /* Elimina el margen en pantallas grandes */
+  }
+  
+  .dropdown-item:hover{
+    color: white !important;
+    background-color: #ca173e !important;
+  }
+
+  .nav-link-inicio{
+    margin-top: 0;
+  }
+
+  .nav-link-categorias:hover{
+    border-radius: 0;
+  }
+
+  .mobile-navbar .nav-link {
+    margin-right: 5px;
+  }
+
+  .dropdown-toggle::after{
+    font-size: x-large !important;
+    vertical-align: middle !important;
+  }
+
+  #basic-nav-dropdown{
+    margin-right: 5px !important;
+  }
+}

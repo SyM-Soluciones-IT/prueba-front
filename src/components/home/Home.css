@@ -1,0 +1,66 @@
+.principal{
+  margin-bottom: 1em;
+}
+.principal-titulo-home{
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: 'Poppins', sans-serif;;
+  font-weight: 700;
+  color: #ca173e;
+  margin-bottom: 1em;
+}
+
+.principal-titulo-seccion{
+  display: none;
+}
+
+.principal-texto-home{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+#productos{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2em;
+}
+
+#marcas{
+  background-color: #ca173e;
+  color: white;
+  height: max-content;
+  width: 80%;
+  align-self: center;
+}
+
+#clientes{
+  width: 80%;
+}
+
+#repuestos{
+  width: 80%;
+}
+
+#nosotros{
+  width: 80%;
+}
+
+#contacto{
+  width: 80%;
+}
+
+@media (min-width: 992px) {
+  .principal-titulo-home{
+    font-size: 2.5rem;
+  }
+  .principal-texto-home{
+    font-size: 1.2em !important;
+  }
+  #marcas{
+    background-color: #ca173e;
+    color: white;
+  }
+}
