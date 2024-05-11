@@ -64,7 +64,7 @@ const ContactForm = ({isHome=false}) => {
           <Form.Label style={{color: "white"}}>Mensaje</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Ingrese su mensaje" required value={message} onChange={(e) => setMessage(e.target.value)} />
         </Form.Group>
-        <Button variant="secondary" type="submit" className="align-self-center mt-2">Enviar</Button>
+        <Button  variant="secondary" type="submit" className="align-self-center mt-2 btn-contact">Enviar</Button>
       </Form>
       </Container>
     </div>

@@ -53,7 +53,7 @@ const AfterSell = ({isHome=false}) => {
               Contamos con un equipo de profesionales técnicos para solucionar cualquier duda o consulta. Cualquier información puede enviarlo a través de nuestro formulario de contacto, por WhatsApp o al número del taller.
               </Card.Text>
               <Button
-                variant="secondary"
+                variant="primary"
                 className="mt-3"
                 onClick={handleShowModal}
               >
@@ -69,7 +69,7 @@ const AfterSell = ({isHome=false}) => {
         <Modal.Body className="text-center d-flex flex-column">
           <Button
             variant="primary"
-            className="mr-2"
+            className="mr-2 "
             onClick={() => {
               const mensaje = encodeURIComponent(
                 `Hola, quiero solicitar turno para el taller`
