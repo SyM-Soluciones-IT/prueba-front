@@ -15,6 +15,7 @@
   font-size: 1.2em;
   font-weight: 500;
   padding: 0px 5%;
+  width: 100%;
 }
 
 .tarjeta {
@@ -31,25 +32,43 @@
   margin-bottom: 1.5em;
   align-content: space-between !important;
 }
+.tarjeta-titulo{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
 .tarjeta-body{
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
 }
-
-img {
-  height: 100%;
+.tarjeta-texto{
+  margin-top: .7em;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+}
+.imagen-repuestos {
+  height: 350px;
   max-width: 100%; /* Asegura que la imagen no se desborde en pantallas pequeñas */
+  align-self: center;
+  width: 300px;
+}
+
+.contendor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contenedor-top {
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
   justify-content: space-evenly;
-}
-.imagen-repuestos{
-  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
@@ -64,5 +83,10 @@ img {
   .contenedor-top {
     width: 80%; /* Ajusta el ancho del contenedor en pantallas grandes */
   }
-  
+
+  .intro-repuestos{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

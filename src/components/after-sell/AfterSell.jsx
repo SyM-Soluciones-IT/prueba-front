@@ -18,18 +18,18 @@ const AfterSell = ({isHome=false}) => {
   }
 
   return (
-    <div className="contenedor" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <div className="contenedor">
         <h2 className={isHome ? "principal-titulo-home" : "principal-titulo-seccion"}>{AFTER_SELL_TEXT.title}</h2>
-        <div className="intro-repuestos" style={{ width: "80%"}}>
+        <div className="intro-repuestos">
           <p className="repuestos-texto">{AFTER_SELL_TEXT.content}</p>
           <p className="repuestos-texto">{AFTER_SELL_TEXT.content2}</p>
         </div>
       <div className="contenedor-top">
           <Card className="tarjeta">
-          <Card.Title style={{ textAlign: "center" , fontSize: "1.5em", fontWeight: "bold"}}>Garantía</Card.Title>
+          <Card.Title className="tarjeta-titulo">Garantía</Card.Title>
             <Card.Body className="text-center tarjeta-body">
-              <Card.Img variant="bottom" className="imagen-repuestos" style={{ width: "300px", height: "350px"}} src="https://i.ibb.co/ZNYYxQb/images.jpg" />
-              <Card.Text style={{marginTop: ".7em", minHeight: "100px", display: "flex", alignItems: "center", fontSize: "1.5em"}}>
+              <Card.Img variant="bottom" className="imagen-repuestos"  src="https://i.ibb.co/ZNYYxQb/images.jpg" />
+              <Card.Text className="tarjeta-texto" >
                 Nuestros vehículos cuentan con una garantía de 100.000kms o 3 años lo que suceda primero.
               </Card.Text>
             </Card.Body>
@@ -37,8 +37,8 @@ const AfterSell = ({isHome=false}) => {
         <Card className="tarjeta">
           <Card.Title style={{ textAlign: "center" , fontSize: "1.5em", fontWeight: "bold"}}>Repuestos</Card.Title>
             <Card.Body className="text-center tarjeta-body">
-              <Card.Img className="imagen-repuestos" variant="bottom" style={{ width: "300px", height: "350px" }} src="https://i.ibb.co/5xnhKH5/repuestos-originales.jpg" />
-              <Card.Text style={{marginTop: ".7em", minHeight: "100px", display: "flex", alignItems: "center", fontSize: "1.5em"}}>
+              <Card.Img className="imagen-repuestos" variant="bottom"  src="https://i.ibb.co/5xnhKH5/repuestos-originales.jpg" />
+              <Card.Text className="tarjeta-texto" >
                 En Bahia Mobility todos los repuestos son originales, garantizando así que tu vehículo siempre esté en perfecto estado.
               </Card.Text>
             </Card.Body>
@@ -48,13 +48,13 @@ const AfterSell = ({isHome=false}) => {
         <Card className="tarjeta">
             <Card.Title style={{ textAlign: "center" , fontSize: "1.5em", fontWeight: "bold", marginTop: "1em"}}>Asistencia Técnica</Card.Title>
             <Card.Body className="text-center tarjeta-body">
-              <Card.Img className="imagen-repuestos" variant="bottom" style={{ width: "300px",height: "350px" }} src="https://i.ibb.co/mzVTrnQ/2024-03-13.jpg" />
-              <Card.Text style={{marginTop: ".7em",  minHeight: "100px", display: "flex", alignItems: "center", fontSize: "1.5em"}}>
+              <Card.Img className="imagen-repuestos" variant="bottom" src="https://i.ibb.co/mzVTrnQ/2024-03-13.jpg" />
+              <Card.Text className="tarjeta-texto">
               Contamos con un equipo de profesionales técnicos para solucionar cualquier duda o consulta. Cualquier información puede enviarlo a través de nuestro formulario de contacto, por WhatsApp o al número del taller.
               </Card.Text>
               <Button
-                variant="primary"
-                className="mr-2"
+                variant="secondary"
+                className="mt-3"
                 onClick={handleShowModal}
               >
                 {AFTER_SELL_TEXT.buttonText}

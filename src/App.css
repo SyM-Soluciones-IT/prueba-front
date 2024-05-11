@@ -3,7 +3,7 @@
   color: white;
   justify-content: center;
   width: 100vw;
-  font-size: 2em;
+  font-size: 1.3em;
   font-family: 'Poppins', sans-serif;;
   font-weight: 700;
   align-items: center;
@@ -16,3 +16,9 @@
   color: white;
 }
 
+@media (min-width: 768px) {
+  .principal-titulo-seccion{
+    font-size: 2em;
+  }
+  
+}

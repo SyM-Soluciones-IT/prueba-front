@@ -66,11 +66,7 @@ const Footer = () => {
           xs={12}
           sm={6}
           md={3}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
+          className="footer-col"
         >
           <h5>Enterate las novedades</h5>
           {/* Utiliza Formik para manejar el formulario */}

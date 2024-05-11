@@ -46,7 +46,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
   };
 
   return (
-    <div className="container contenedor d-flex flex-column align-items-center">
+    <div className="container  d-flex flex-column align-items-center">
       <h2 className="principal-titulo-seccion">{USEDS_TEXT.title}</h2>
       <div className="separador">
         <p className="repuestos-texto">{USEDS_TEXT.description}</p>
@@ -56,29 +56,24 @@ const Useds = ({ onSectionChange, selectedSection }) => {
         {useds.map((used) => (
           <div key={used._id} className="col-md-4 mb-4">
             <div
-              className="card text-center border-black"
-              style={{
-                borderRadius: "10px",
-                minHeight: "350px",
-                marginTop: "10px",
-              }}
+              className="card card-used text-center border-black"
             >
               <img
                 className="card-img-top"
                 src={used.image}
                 alt={used.name}
               />
-              <div className="card-body">
-                <h5 className="card-title">{used.name}</h5>
-                <p className="card-text">{used.description}</p>
-                <p className="card-text">
+              <div className="card-body body-used">
+                <h5 className="card-title title-used">{used.name}</h5>
+                <p className="card-text text-used">{used.description}</p>
+                <p className="card-text text-used">
                   <strong>Specs:</strong> {used.specs}
                 </p>
-                <p className="card-text">
+                <p className="card-text text-used">
                   <strong>Year:</strong> {used.year || "No especificado"}
                 </p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary btn-cotizar"
                   onClick={() => handleCotizarClick(used)}
                 >
                   Cotiza aquí
@@ -102,7 +97,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
             )}
             <Button
               variant="primary"
-              style={{ marginRight: "5px", marginBottom: "5px" }}
+              className="button-useds"
               onClick={() => {
                 const mensaje = encodeURIComponent(
                   `Hola, quiero cotizar el usado ${selectedUsed.name}`
@@ -114,7 +109,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
             </Button>{" "}
             <Button
               variant="primary"
-              style={{ marginRight: "5px", marginBottom: "5px" }}
+              className="button-useds"
               onClick={() => {
                 navigate(
                   `/contacto?asunto=Cotizacion ${encodeURIComponent(

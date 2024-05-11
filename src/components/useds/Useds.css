@@ -1,3 +1,47 @@
 .row{
   width: 100%;
 }
+
+.principal-titulo-seccion {
+  margin-bottom: 0;
+}
+
+.separador {
+  margin-bottom: 20px;
+}
+
+.repuestos-texto {
+  margin-bottom: 10px;
+}
+
+.card-used {
+  border: 1px solid #000;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.card-used:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-used .card-img-top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.body-used {
+  padding: 20px;
+}
+
+.title-used {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text-used {
+  margin-bottom: 10px;
+}
+
+.btn-cotizar {
+  width: 100%;
+}
