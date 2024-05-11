@@ -121,10 +121,7 @@
   color: white; /* Texto blanco */
   border-color: #ca173e;
 }
-.page-item button:hover {
-  pointer-events: none;
-  background-color: transparent;
-}
+
 
 .container-categorias{
   display: flex;
