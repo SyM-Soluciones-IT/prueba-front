@@ -44,36 +44,19 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
           setLoading(true);
           const storedVehiclesJSON = localStorage.getItem("vehicles");
           const storedVehicles = storedVehiclesJSON ? JSON.parse(storedVehiclesJSON) : {};
-          const lastUpdatedJSON = localStorage.getItem("lastUpdated");
-          const lastUpdated = lastUpdatedJSON ? new Date(JSON.parse(lastUpdatedJSON)) : null;
 
-          if (storedVehicles[category] && lastUpdated) {
+          if (storedVehicles[category]) {
             const vehiclesData = storedVehicles[category];
-            const { lastModified } = await getVehicles(category, true);
-
-            // Comparamos la fecha de la última actualización del servidor con la fecha local
-            if (new Date(lastModified) <= lastUpdated) {
-              setVehicles(vehiclesData);
-            } else {
-              // Si los datos en el servidor son más recientes, realizamos una nueva solicitud
-              const newVehiclesData = await getVehicles(category);
-              setVehicles(newVehiclesData);
-              localStorage.setItem("vehicles", JSON.stringify({
-                ...storedVehicles,
-                [category]: newVehiclesData,
-              }));
-              localStorage.setItem("lastUpdated", JSON.stringify(new Date()));
-            }
+            setVehicles(vehiclesData);
           } else {
-            // Si no hay datos almacenados localmente, o si no hay fecha de última actualización, hacemos una solicitud
             const vehiclesData = await getVehicles(category);
             setVehicles(vehiclesData);
             localStorage.setItem("vehicles", JSON.stringify({
               ...storedVehicles,
               [category]: vehiclesData,
             }));
-            localStorage.setItem("lastUpdated", JSON.stringify(new Date()));
           }
+          setLoaded(true); // Marcar que los datos han sido cargados
         } catch (error) {
           console.error("Error fetching vehicles:", error);
         } finally {
