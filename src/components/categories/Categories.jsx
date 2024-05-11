@@ -20,18 +20,24 @@ const Categories = () => {
     fetchCategories();
   }, []);
 
+  const scrollToTop = () => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // Retraso de 100 milisegundos
+  }
+
   return (
     <Container className='d-flex justify-content-center'>
       <div className="d-flex flex-wrap justify-content-center">
         {categories.map(category => (
           <div key={category._id} className="col-xl-2 col-lg-2 col-md-4 col-sm-6 m-3 d-flex align-content-center border-0 flex-column flex-wrap" style={{minWidth: '200px'}}>
               <div className='div-category' style={{ width: 'fit-content'}}>
-                <Link to={`/nuestros-vehiculos/${category.name.toLowerCase().replace(/ /g, '-')}`} className="category-link">
+                <Link to={`/nuestros-vehiculos/${category.name.toLowerCase().replace(/ /g, '-')}`} className="category-link" onClick={scrollToTop}>
                   <img src={category.image} loading="lazy" alt={category.name} className="category-image" />
                 </Link>
               </div>
               <div className='div-category' style={{ alignSelf: 'center', width: 'fit-content'}}>
-                <Link to={`/nuestros-vehiculos/${category.name.toLowerCase().replace(/ /g, '-')}`} className="category-link">
+                <Link to={`/nuestros-vehiculos/${category.name.toLowerCase().replace(/ /g, '-')}`} className="category-link" onClick={scrollToTop}>
                   <span className="category-title">{category.name}</span>
                 </Link>
               </div>

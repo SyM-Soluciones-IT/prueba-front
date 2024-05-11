@@ -81,14 +81,6 @@ const Header = ({ onSectionChange }) => {
     setShowCategories(false);
   };
 
-  const handleCotizarClick = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
   const scrollToTop = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });

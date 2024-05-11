@@ -42,8 +42,38 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
       if (category) {
         try {
           setLoading(true);
-          const vehiclesData = await getVehicles(category);
-          setVehicles(vehiclesData);
+          const storedVehiclesJSON = localStorage.getItem("vehicles");
+          const storedVehicles = storedVehiclesJSON ? JSON.parse(storedVehiclesJSON) : {};
+          const lastUpdatedJSON = localStorage.getItem("lastUpdated");
+          const lastUpdated = lastUpdatedJSON ? new Date(JSON.parse(lastUpdatedJSON)) : null;
+
+          if (storedVehicles[category] && lastUpdated) {
+            const vehiclesData = storedVehicles[category];
+            const { lastModified } = await getVehicles(category, true);
+
+            // Comparamos la fecha de la última actualización del servidor con la fecha local
+            if (new Date(lastModified) <= lastUpdated) {
+              setVehicles(vehiclesData);
+            } else {
+              // Si los datos en el servidor son más recientes, realizamos una nueva solicitud
+              const newVehiclesData = await getVehicles(category);
+              setVehicles(newVehiclesData);
+              localStorage.setItem("vehicles", JSON.stringify({
+                ...storedVehicles,
+                [category]: newVehiclesData,
+              }));
+              localStorage.setItem("lastUpdated", JSON.stringify(new Date()));
+            }
+          } else {
+            // Si no hay datos almacenados localmente, o si no hay fecha de última actualización, hacemos una solicitud
+            const vehiclesData = await getVehicles(category);
+            setVehicles(vehiclesData);
+            localStorage.setItem("vehicles", JSON.stringify({
+              ...storedVehicles,
+              [category]: vehiclesData,
+            }));
+            localStorage.setItem("lastUpdated", JSON.stringify(new Date()));
+          }
         } catch (error) {
           console.error("Error fetching vehicles:", error);
         } finally {
@@ -142,7 +172,7 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
                   {vehicle.datasheet && vehicle.datasheet !== "" && (
                     <a href={vehicle.datasheet} target="_self" rel="noopener noreferrer" className="btn btn-primary">Descargar Ficha Técnica</a>
                   )}
-                  <button className="btn btn-primary" style={{ width: "fit-content" }} onClick={() => handleCotizarClick(vehicle)}>Cotiza Aquí</button>
+                  <button className="btn btn-primary btn-vehicles" style={{ width: "fit-content" }} onClick={() => handleCotizarClick(vehicle)}>Cotiza Aquí</button>
                 </div>
               </div>
             </div>

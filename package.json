@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start" : "vite",
+    "start": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -23,6 +23,7 @@
     "react-slick": "^0.30.2",
     "sendgrid": "^5.2.3",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.11.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {

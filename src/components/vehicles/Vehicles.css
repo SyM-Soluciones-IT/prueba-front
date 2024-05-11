@@ -100,13 +100,13 @@
   min-height: 550px;
 }
 
-.btn{
+.btn-vehicles{
   background-color: #321f56;
   border:#321f56 !important;
   margin-bottom: 1em;
 }
 
-.btn:hover{
+.btn-vehicles:hover{
   background-color: transparent;
   pointer-events: none;
 }
@@ -193,7 +193,7 @@
     justify-content: space-around !important;
   }
   
-  .btn:hover{
+  .btn-vehicles:hover{
     background-color: #4f45a7;
     color: white;
     cursor: pointer;

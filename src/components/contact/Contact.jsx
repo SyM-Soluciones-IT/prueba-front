@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Form, Button, Container } from 'react-bootstrap';
+import { sendEmail } from '../../services/services';
+import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
 
 const ContactForm = ({isHome=false}) => {
@@ -22,15 +23,23 @@ const ContactForm = ({isHome=false}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://penamatias.alwaysdata.net/api/contacto/', { name, email, message, asunto });
-      alert('Message sent successfully!');
+      await sendEmail(name, email, message, asunto);
+      Swal.fire({
+        icon: 'success',
+        title: 'Email enviado exitosamente!',
+        text: 'Gracias por contactarnos!',
+      })
       setName('');
       setAsunto('');
       setEmail('');
       setMessage('');
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('An error occurred while sending the message.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Ocurrió un error al enviar el correo.',
+      })
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Spinner } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getUseds } from "../../services/services";
 import "./Useds.css";
@@ -10,16 +10,20 @@ const Useds = ({ onSectionChange, selectedSection }) => {
   const [selectedUsed, setSelectedUsed] = useState(null);
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const usedsData = await getUseds();
         setUseds(usedsData);
       } catch (error) {
         console.error("Error fetching usados:", error);
+      } finally {
+        setLoading(false); // Ocultar el spinner después de la carga de datos
       }
     };
     fetchData();
@@ -52,6 +56,14 @@ const Useds = ({ onSectionChange, selectedSection }) => {
         <p className="repuestos-texto">{USEDS_TEXT.description}</p>
         <p className="repuestos-texto">{USEDS_TEXT.description2}</p>
       </div>
+      {loading && (
+        <div className="spinner">
+          <Spinner animation="border" role="status">
+            <span className="sr-only"></span>
+          </Spinner>
+        </div>
+      )}
+      {!loading && (
       <div className="row d-flex justify-content-center">
         {useds.map((used) => (
           <div key={used._id} className="col-md-4 mb-4">
@@ -83,6 +95,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
           </div>
         ))}
       </div>
+      )}
       {/* Modal aquí */}
       {showModal && (
         <Modal show={showModal} onHide={handleCloseModal}>

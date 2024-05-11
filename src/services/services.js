@@ -56,3 +56,12 @@ export async function getClients(){
     console.error('Error al obtener los clientes:', error);
   }
 }
+
+export async function sendEmail(name, email, message, asunto) {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/contacto`, { name, email, message, asunto });
+    return response.data;
+  } catch (error) {
+    console.error('Error al enviar el correo:', error);
+  }
+}
