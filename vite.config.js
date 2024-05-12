@@ -3,26 +3,22 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: './', // specify the project root directory
   plugins: [react()],
-
-  // Agrega una regla para copiar el archivo _redirects al directorio de salida
   build: {
+    outDir: 'dist', // output directory
+    emptyOutDir: true, // remove existing files in dist before building
+    assetsInlineLimit: 0, // include all files in dist, even small ones
     rollupOptions: {
       input: {
-        main: './src/main.jsx'
+        main: 'index.html', // include index.html
       },
       output: {
-        // otros ajustes de salida...
+        assetFileNames: '[name].[ext]', // preserve file names and extensions
+        chunkFileNames: '[name].[ext]', // preserve file names and extensions
       },
     },
-    // Copia el archivo _redirects al directorio de salida
-    assetsInlineLimit: 0,
-    assets: {
-      // Copia el archivo _redirects sin procesar al directorio de salida
-      // Esto evita que se procese o renombre el archivo
-      rawBase: './public',
-      // Incluye el archivo _redirects en el directorio de salida
-      include: ['**/_redirects']
-    }
-  }
+    // include _redirects file in dist
+    assets: ['_redirects'],
+  },
 })
