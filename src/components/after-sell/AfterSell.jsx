@@ -35,7 +35,7 @@ const AfterSell = ({isHome=false}) => {
             </Card.Body>
           </Card>
         <Card className="tarjeta">
-          <Card.Title style={{ textAlign: "center" , fontSize: "1.5em", fontWeight: "bold"}}>Repuestos</Card.Title>
+          <Card.Title className="tarjeta-titulo">Repuestos</Card.Title>
             <Card.Body className="text-center tarjeta-body">
               <Card.Img className="imagen-repuestos" variant="bottom"  src="https://i.ibb.co/5xnhKH5/repuestos-originales.jpg" />
               <Card.Text className="tarjeta-texto" >
@@ -46,7 +46,7 @@ const AfterSell = ({isHome=false}) => {
       </div>
       <div className="contenedor-top">
         <Card className="tarjeta">
-            <Card.Title style={{ textAlign: "center" , fontSize: "1.5em", fontWeight: "bold", marginTop: "1em"}}>Asistencia Técnica</Card.Title>
+            <Card.Title className="tarjeta-titulo">Asistencia Técnica</Card.Title>
             <Card.Body className="text-center tarjeta-body">
               <Card.Img className="imagen-repuestos" variant="bottom" src="https://i.ibb.co/mzVTrnQ/2024-03-13.jpg" />
               <Card.Text className="tarjeta-texto">
@@ -54,7 +54,7 @@ const AfterSell = ({isHome=false}) => {
               </Card.Text>
               <Button
                 variant="primary"
-                className="mt-3"
+                className="mt-3 btn-secondary"
                 onClick={handleShowModal}
               >
                 {AFTER_SELL_TEXT.buttonText}
@@ -69,7 +69,7 @@ const AfterSell = ({isHome=false}) => {
         <Modal.Body className="text-center d-flex flex-column">
           <Button
             variant="primary"
-            className="mr-2 "
+            className="mb-2 btn-primary"
             onClick={() => {
               const mensaje = encodeURIComponent(
                 `Hola, quiero solicitar turno para el taller`
@@ -81,7 +81,7 @@ const AfterSell = ({isHome=false}) => {
           </Button>
           <Button
             variant="primary"
-            className="mr-2"
+            className="mb-2 btn-primary"
             onClick={() => {
               navigate(
                 `/contacto?asunto=Consulta`
@@ -89,10 +89,11 @@ const AfterSell = ({isHome=false}) => {
               scrollToTop();
             }}
           >
-            <RiMailLine className="mr-1" /> Solicitar turno por Correo
+            <RiMailLine className="mb-1 " /> Solicitar turno por Correo
           </Button>
           <Button
             variant="primary"
+            className="btn-primary"
             onClick={() => {
               window.location.href = `tel:+123456789`; // Replace with the actual phone number
             }}

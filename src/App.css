@@ -14,11 +14,45 @@
 .btn-primary{
   background-color: #ca173e;
   color: white;
+  border: 1px solid #ca173e;
+  width: 60%;
+  align-self: center;
 }
+
+.btn-secondary{
+  background-color: #453a93;
+  color: white;
+  border: 1px solid #453a93;
+  width: 60%;
+  align-self: center;
+}
+
+.btn-primary:hover {
+  background-color: initial;
+  color: initial; 
+  border: initial; 
+}
+
+.btn-secondary:hover {
+  background-color: initial; 
+  color: initial; 
+  border: initial; 
+}
+
+
 
 @media (min-width: 768px) {
   .principal-titulo-seccion{
     font-size: 2em;
   }
-  
+  .btn-primary:hover{
+    background-color: #8076bd;
+    color: white;
+    border: 1px solid #8076bd;
+  }
+  .btn-secondary:hover{
+    background-color: #8076bd;
+    color: white;
+    border: 1px solid #8076bd;
+  }
 }

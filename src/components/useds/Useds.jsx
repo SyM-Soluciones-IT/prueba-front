@@ -85,7 +85,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
                   <strong>Year:</strong> {used.year || "No especificado"}
                 </p>
                 <button
-                  className="btn btn-primary btn-cotizar"
+                  className="btn btn-primary"
                   onClick={() => handleCotizarClick(used)}
                 >
                   Cotiza aquí
@@ -110,7 +110,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
             )}
             <Button
               variant="primary"
-              className="button-useds"
+              className="btn-primary mb-2"
               onClick={() => {
                 const mensaje = encodeURIComponent(
                   `Hola, quiero cotizar el usado ${selectedUsed.name}`
@@ -122,7 +122,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
             </Button>{" "}
             <Button
               variant="primary"
-              className="button-useds"
+              className="btn-primary mb-2"
               onClick={() => {
                 navigate(
                   `/contacto?asunto=Cotizacion ${encodeURIComponent(

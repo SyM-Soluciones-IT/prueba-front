@@ -70,7 +70,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 @media (min-width: 768px) {
   /* Estilos para pantallas de tamaño medio */
   .tarjeta {
@@ -89,4 +88,5 @@
     margin-left: auto;
     margin-right: auto;
   }
+
 }

@@ -153,9 +153,9 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
                     </p>
                   ))}
                   {vehicle.datasheet && vehicle.datasheet !== "" && (
-                    <a href={vehicle.datasheet} target="_self" rel="noopener noreferrer" className="btn btn-primary">Descargar Ficha Técnica</a>
+                    <a href={vehicle.datasheet} target="_self" rel="noopener noreferrer" className="btn">Descargar Ficha Técnica</a>
                   )}
-                  <button className="btn btn-primary btn-vehicles" style={{ width: "fit-content" }} onClick={() => handleCotizarClick(vehicle)}>Cotiza Aquí</button>
+                  <button className="btn mb-2 btn-primary" style={{ width: "fit-content" }} onClick={() => handleCotizarClick(vehicle)}>Cotiza Aquí</button>
                 </div>
               </div>
             </div>
