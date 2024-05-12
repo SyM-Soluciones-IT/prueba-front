@@ -85,7 +85,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
                   <strong>Year:</strong> {used.year || "No especificado"}
                 </p>
                 <button
-                  className="btn btn-primary"
+                  className="btn-primary"
                   onClick={() => handleCotizarClick(used)}
                 >
                   Cotiza aquí
@@ -109,7 +109,6 @@ const Useds = ({ onSectionChange, selectedSection }) => {
               </p>
             )}
             <Button
-              variant="primary"
               className="btn-primary mb-2"
               onClick={() => {
                 const mensaje = encodeURIComponent(
@@ -121,7 +120,6 @@ const Useds = ({ onSectionChange, selectedSection }) => {
               Cotizar por WhatsApp
             </Button>{" "}
             <Button
-              variant="primary"
               className="btn-primary mb-2"
               onClick={() => {
                 navigate(

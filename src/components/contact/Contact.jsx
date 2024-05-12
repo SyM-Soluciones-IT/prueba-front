@@ -3,6 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { sendEmail } from '../../services/services';
 import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
+import './Contact.css'
 
 const ContactForm = ({isHome=false}) => {
   const [name, setName] = useState('');
@@ -47,21 +48,21 @@ const ContactForm = ({isHome=false}) => {
     <div >
       <h2 className={isHome ? "principal-titulo-home" : "principal-titulo-seccion"}>Contacto</h2>
       <Container>
-      <Form onSubmit={handleSubmit} className="mt-4 p-4 border rounded" style={{backgroundColor: "#da1d27", display: "flex", flexDirection: "column"}}>
+      <Form onSubmit={handleSubmit} className="mt-4 p-4 border rounded form">
         <Form.Group controlId="formName">
-          <Form.Label style={{color: "white"}}>Nombre</Form.Label>
+          <Form.Label className='form-label'>Nombre</Form.Label>
           <Form.Control type="text" placeholder="Ingrese su nombre" required value={name} onChange={(e) => setName(e.target.value)} />
         </Form.Group>
         <Form.Group controlId="formEmail">
-          <Form.Label style={{color: "white"}}>Correo Electrónico</Form.Label>
+          <Form.Label className='form-label'>Correo Electrónico</Form.Label>
           <Form.Control type="email" placeholder="Ingrese su correo" required value={email} onChange={(e) => setEmail(e.target.value)} />
         </Form.Group>
         <Form.Group controlId="formAsunto">
-          <Form.Label style={{color: "white"}}>Asunto</Form.Label>
+          <Form.Label className='form-label'>Asunto</Form.Label>
           <Form.Control type="text" placeholder="Ingrese el asunto" required value={asunto} onChange={(e) => setAsunto(e.target.value)} />
         </Form.Group>
         <Form.Group controlId="formMessage">
-          <Form.Label style={{color: "white"}}>Mensaje</Form.Label>
+          <Form.Label className='form-label'>Mensaje</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Ingrese su mensaje" required value={message} onChange={(e) => setMessage(e.target.value)} />
         </Form.Group>
         <Button type="submit" className="mt-2 btn-secondary">Enviar</Button>

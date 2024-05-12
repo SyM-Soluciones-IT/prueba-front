@@ -1,5 +1,4 @@
 /* Estilos para la tarjeta de categoría */
-
 .category-card {
   border: none; /* Elimina el borde de la tarjeta */
   cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
@@ -25,6 +24,19 @@
   width: 40%;
 }
 
+.div-principal-category{
+  display: flex;
+  align-content: center;
+  border: 0;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 200px;
+}
+
+.div-category{
+  width: fit-content;
+  align-self: center;
+}
 
 .category-title{
   font-weight: bold;

@@ -6,6 +6,19 @@
   align-items: center;
 }
 
+.div-row{
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.div-vehiculos{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .descripcion-seccion{
   margin-bottom: 0;
   font-size: 1.2em;
@@ -89,6 +102,7 @@
 .navbar-categorias .navbar-toggler {
   background-color: gray;
   border-color: #101010;
+  color: white;
 }
 
 /* Estilo para el icono del botón de despliegue en la navbar de categorías */
@@ -126,8 +140,10 @@
 .container-categorias{
   display: flex;
   flex-direction: column;
+  background-color: #101010;
+  color: white;
   align-items: center;
-  width: 100%;
+  width: 100vw;
 }
 
 .dropdown-menu{
@@ -145,6 +161,8 @@
   border-radius: 20px;
   padding: 10px;
   margin: 5px;
+  border: transparent;
+  width: 100%;
 }
 
 .nav-dropdown-mobile .dropdown-menu {
@@ -166,11 +184,13 @@
 .card-productos{
   border: 1px solid #101010;
   border-radius: 5px;
-  width: max-content;
+  width: 300px;
+  margin-top: 10px;
 }
 
 .card-text{
   margin-bottom: 0;
+  text-align: center;
 }
 
 .card-body-productos a{
@@ -179,8 +199,23 @@
 
 .image-card{
   margin: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.carousel-vehiculos{
+  border-bottom: 1px solid #101010;
+  height: 250px;
 }
 
+.iframe-vehiculos{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-title-vehicles{
+  width: 100%;
+  font-weight: bold;
+  border-bottom: #101010 1px solid;
+}
 @media (min-width: 768px) {
 
   .card-img-top{

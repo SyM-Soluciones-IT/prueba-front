@@ -1,0 +1,10 @@
+.form{
+  background-color: #da1d27;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label{
+  color: white;
+}
+
