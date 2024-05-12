@@ -67,31 +67,43 @@ const Useds = ({ onSectionChange, selectedSection }) => {
       <div className="row d-flex justify-content-center">
         {useds.map((used) => (
           <div key={used._id} className="col-md-4 mb-4">
-            <div
-              className="card card-used text-center border-black"
-            >
-              <img
-                className="card-img-top"
-                src={used.image}
-                alt={used.name}
-              />
-              <div className="card-body body-used">
-                <h5 className="card-title title-used">{used.name}</h5>
-                <p className="card-text text-used">{used.description}</p>
-                <p className="card-text text-used">
-                  <strong>Specs:</strong> {used.specs}
-                </p>
-                <p className="card-text text-used">
-                  <strong>Year:</strong> {used.year || "No especificado"}
-                </p>
-                <button
-                  className="btn-primary"
-                  onClick={() => handleCotizarClick(used)}
-                >
-                  Cotiza aquí
-                </button>
-              </div>
-            </div>
+          <div className="card-used">
+
+<img className="card-img-top" src={used.image} alt={used.name} />
+
+<div className="card-body body-used">
+
+  <h5 className="card-title title-used">{used.name}</h5>
+
+  <p className="card-text text-used">{used.description}</p>
+
+  <p className="card-text text-used">
+
+    <strong>Specs:</strong> {used.specs}
+
+  </p>
+
+  <p className="card-text text-used">
+
+    <strong>Year:</strong> {used.year || "No especificado"}
+
+  </p>
+
+  <button
+
+    className="btn-primary"
+
+    onClick={() => handleCotizarClick(used)}
+
+  >
+
+    Cotiza aquí
+
+  </button>
+
+</div>
+
+</div>
           </div>
         ))}
       </div>
