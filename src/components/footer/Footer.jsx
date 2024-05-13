@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -29,8 +28,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <Row>
-        <Col xs={12} sm={6} md={3}>
+        <div className="col-xs-12 col-sm-6 col-md-3">
           <h5>Información</h5>
           <ul className="list-unstyled">
             <li>
@@ -40,8 +38,8 @@ const Footer = () => {
               <a href="#">Política de privacidad</a>
             </li>
           </ul>
-        </Col>
-        <Col xs={12} sm={6} md={3}>
+        </div>
+        <div className="col-xs-12 col-sm-6 col-md-3">
           <h5>Redes Sociales</h5>
           <div className="social-icons">
             <a
@@ -61,13 +59,8 @@ const Footer = () => {
               <AiOutlineInstagram />
             </a>
           </div>
-        </Col>
-        <Col
-          xs={12}
-          sm={6}
-          md={3}
-          className="footer-col"
-        >
+        </div>
+        <div className="col-xs-12 col-sm-6 col-md-3 footer-col">
           <h5>Enterate las novedades</h5>
           {/* Utiliza Formik para manejar el formulario */}
           <Formik
@@ -89,8 +82,8 @@ const Footer = () => {
               </Form>
             )}
           </Formik>
-        </Col>
-        <Col xs={12} sm={6} md={3}>
+        </div>
+        <div className="col-xs-12 col-sm-6 col-md-3">
           <h5>Contacto</h5>
           <p>
             Hipólito Yrigoyen 3871, B8000 Bahía Blanca, Provincia de Buenos
@@ -98,16 +91,13 @@ const Footer = () => {
           </p>
           <p>Email: ventas@fotonbahia.com.ar</p>
           <p>Teléfono: 0291 446-0146</p>
-        </Col>
-      </Row>
+        </div>
       <hr />
-      <Row>
-        <Col xs={12}>
-          <p className="text-center">
-            © 2024 SyM Soluciones IT. Todos los derechos reservados.
-          </p>
-        </Col>
-      </Row>
+      <div className="col-xs-12">
+        <p className="text-center">
+          © 2024 SyM Soluciones IT. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
   );
 };
