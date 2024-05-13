@@ -7,6 +7,7 @@
 .principal{
   margin-bottom: 1em;
 }
+
 .principal-titulo-home,.principal-titulo-home-marcas{
   margin-top: 1em;
   text-align: center;
@@ -38,7 +39,7 @@
 }
 
 .img-home{
-  width: 100vw;
+  width: 100%;
   min-height: 250px;
   object-fit: cover;
   margin-bottom: 1em;

@@ -14,7 +14,7 @@ const Home = ({isHome=true}) => {
     <div className='div-principal-home'>
       <section className="principal">
         <h2 className="principal-titulo-seccion">Foton en Bahia Blanca y la zona</h2>
-        <div className='container'>
+        <div>
           <p className="principal-texto-home">{HOME_TEXT.content}</p>
         </div>
       </section>

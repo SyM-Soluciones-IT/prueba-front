@@ -143,7 +143,7 @@
   background-color: #101010;
   color: white;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .dropdown-menu{
@@ -269,7 +269,8 @@
   }
 
   .contenedor-descripcion-seccion{
-    margin: 1em 0;
+    margin: 0 0 2em 0;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
