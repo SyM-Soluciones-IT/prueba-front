@@ -41,10 +41,25 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
             setVehicles(vehiclesData);
           } else {
             const vehiclesData = await getVehicles(capitalizedCategory);
-            setVehicles(vehiclesData);
+
+            // Fetch the datasheet URLs
+            const filesResponse = await fetch('https://penamatias.alwaysdata.net/api/files');
+            const filesData = await filesResponse.json();
+
+            const updatedVehicles = vehiclesData.map(vehicle => {
+              const vehicleNameFormatted = vehicle.name.replace(/\s+/g, '-');
+              console.log(vehicleNameFormatted);
+              const matchingFile = filesData.find(fileUrl => fileUrl.includes(vehicleNameFormatted));
+              if (matchingFile) {
+                vehicle.datasheet = `https://penamatias.alwaysdata.net/api/download/${vehicleNameFormatted}.pdf`;
+              }
+              return vehicle;
+            });
+
+            setVehicles(updatedVehicles);
             localStorage.setItem("vehicles", JSON.stringify({
               ...storedVehicles,
-              [capitalizedCategory]: vehiclesData,
+              [capitalizedCategory]: updatedVehicles,
             }));
           }
         }
@@ -57,7 +72,7 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
     fetchData();
     resetPagination();
     updateSelectedSection();
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
 
   // Add event listener for window load event
@@ -65,6 +80,7 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
     window.addEventListener("load", () => {
       window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top when the page loads
     });
+    localStorage.clear();
     return () => {
       window.removeEventListener("load", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -154,7 +170,7 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
                       </p>
                     ))}
                     {vehicle.datasheet && vehicle.datasheet !== "" && (
-                      <a href={vehicle.datasheet} target="_self" rel="noopener noreferrer" className="btn">Descargar Ficha Técnica</a>
+                      <a href={vehicle.datasheet} target="_self" rel="noopener noreferrer" className="btn mb-2 btn-primary">Ficha Técnica</a>
                     )}
                     <button className="btn mb-2 btn-primary"  onClick={() => handleCotizarClick(vehicle)}>Cotiza Aquí</button>
                   </div>
