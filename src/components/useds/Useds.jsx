@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Spinner } from "react-bootstrap";
+import { Modal, Button, Spinner, Carousel } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getUseds } from "../../services/services";
 import "./Useds.css";
@@ -27,7 +27,20 @@ const Useds = ({ onSectionChange, selectedSection }) => {
       }
     };
     fetchData();
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }, [location]);
+
+  // Add event listener for window load event
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top when the page loads
+    });
+    return () => {
+      window.removeEventListener("load", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    };
+  }, []);
 
   const handleToggleClick = () => {
     setIsNavExpanded(!isNavExpanded);
@@ -64,29 +77,40 @@ const Useds = ({ onSectionChange, selectedSection }) => {
         </div>
       )}
       {!loading && (
-      <div className="row d-flex justify-content-center">
-        {useds.map((used) => (
-          <div key={used._id} className="col-md-4 mb-4">
-          <div className="card-used">
-            <img className="card-img-top" src={used.image} alt={used.name} />
-            <div className="card-body body-used">
-              <h5 className="card-title title-used">{used.name}</h5>
-              <p className="card-text text-used">{used.description}</p>
-              <p className="card-text text-used">
-                <strong>Specs:</strong> {used.specs}
-              </p>
-              <p className="card-text text-used">
-                <strong>Year:</strong> {used.year || "No especificado"}
-              </p>
-              <button
-                className="btn-primary"
-                onClick={() => handleCotizarClick(used)}
-              >
-                Cotiza aquí
-              </button>
-            </div>
+      <div className="row div-row">
+      {useds.map((used) => (
+        <div key={used._id} className="col-md-4 mb-4 div-vehiculos">
+          <div className="card-productos">
+            <Carousel
+              className="carousel-vehiculos"
+              interval={null}
+              controls={used.image.length > 1 || used.video.length > 0}
+            >
+              {used.image.map((image, index) => (
+                <Carousel.Item className="img-auto" key={index}>
+                  <img
+                    className="d-block w-100 image-card img-fluid"
+                    loading="lazy"
+                    src={image}
+                    alt={`Slide ${index}`}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+            <div className="card-body-productos">
+              <h5 className="card-title-vehicles">{used.name}</h5>
+              {["engine", "power", "gearbox", "load", "year"].map((field) => (
+                <p key={field} className="card-text" >
+                  <strong>{field === "engine" ? "Motor" : field === "power" ? "Potencia" : field === "gearbox" ? "Transmisión" : field === "load" ? "PBT" : "Año"}:</strong> {used[field]}
+                </p>
+              ))}
+              {used.datasheet && used.datasheet !== "" && (
+                <a href={used.datasheet} target="_self" rel="noopener noreferrer" className="btn">Descargar Ficha Técnica</a>
+              )}
+              <button className="btn mb-2 btn-primary"  onClick={() => handleCotizarClick(used)}>Cotiza Aquí</button>
             </div>
           </div>
+        </div>
         ))}
       </div>
       )}

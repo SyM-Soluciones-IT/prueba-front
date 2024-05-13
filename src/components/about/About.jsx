@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import "./About.css"; // Archivo CSS para los estilos específicos del componente
 import { ABOUT_TEXT } from "../contentText/ContentText"; // Importa las constantes de texto
-
 const { title, image, historyContent, historyImage } = ABOUT_TEXT;
 
 const About = ({isHome=false}) => {
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top when the page loads
+    });
+    return () => {
+      window.removeEventListener("load", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    };
+    },  []);
   return (
     <section id="about" >
       <h2 className={isHome ? "principal-titulo-home" : "principal-titulo-seccion"}>{title}</h2>

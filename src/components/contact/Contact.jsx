@@ -19,7 +19,20 @@ const ContactForm = ({isHome=false}) => {
     if (asunto) {
       setAsunto(asunto);
     }
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }, [location.search]);
+
+  // Add event listener for window load event
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top when the page loads
+    });
+    return () => {
+      window.removeEventListener("load", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,19 +62,19 @@ const ContactForm = ({isHome=false}) => {
       <h2 className={isHome ? "principal-titulo-home" : "principal-titulo-seccion"}>Contacto</h2>
       <Container>
       <Form onSubmit={handleSubmit} className="mt-4 p-4 border rounded form">
-        <Form.Group controlId="formName">
+        <Form.Group className='form-group' controlId="formName">
           <Form.Label className='form-label'>Nombre</Form.Label>
           <Form.Control type="text" placeholder="Ingrese su nombre" required value={name} onChange={(e) => setName(e.target.value)} />
         </Form.Group>
-        <Form.Group controlId="formEmail">
+        <Form.Group className='form-group' controlId="formEmail">
           <Form.Label className='form-label'>Correo Electrónico</Form.Label>
           <Form.Control type="email" placeholder="Ingrese su correo" required value={email} onChange={(e) => setEmail(e.target.value)} />
         </Form.Group>
-        <Form.Group controlId="formAsunto">
+        <Form.Group className='form-group' controlId="formAsunto">
           <Form.Label className='form-label'>Asunto</Form.Label>
           <Form.Control type="text" placeholder="Ingrese el asunto" required value={asunto} onChange={(e) => setAsunto(e.target.value)} />
         </Form.Group>
-        <Form.Group controlId="formMessage">
+        <Form.Group className='form-group' controlId="formMessage">
           <Form.Label className='form-label'>Mensaje</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Ingrese su mensaje" required value={message} onChange={(e) => setMessage(e.target.value)} />
         </Form.Group>

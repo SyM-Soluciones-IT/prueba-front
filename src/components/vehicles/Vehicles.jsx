@@ -57,7 +57,20 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
     fetchData();
     resetPagination();
     updateSelectedSection();
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }, [location]);
+
+  // Add event listener for window load event
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top when the page loads
+    });
+    return () => {
+      window.removeEventListener("load", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    };
+  }, []);
 
   const updateSelectedSection = () => {
     const pathname = decodeURIComponent(location.pathname.toLowerCase());

@@ -28,73 +28,67 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-        <div className="col-xs-12 col-sm-6 col-md-3">
-          <h5>Información</h5>
-          <ul className="list-unstyled">
-            <li>
-              <a href="/nosotros">Acerca de nosotros</a>
-            </li>
-            <li>
-              <a href="#">Política de privacidad</a>
-            </li>
-          </ul>
-        </div>
-        <div className="col-xs-12 col-sm-6 col-md-3">
-          <h5>Redes Sociales</h5>
-          <div className="social-icons">
-            <a
-              className="youtube"
-              href="https://www.youtube.com/@bahiamobility-Camiones/featured"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaYoutube />
-            </a>
-            <a
-              className="instagram"
-              href="https://www.instagram.com/bahiamobility/?hl=es-la"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineInstagram />
-            </a>
-          </div>
-        </div>
-        <div className="col-xs-12 col-sm-6 col-md-3 footer-col">
-          <h5>Enterate las novedades</h5>
-          {/* Utiliza Formik para manejar el formulario */}
-          <Formik
-            initialValues={{ email: "" }}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
+      <div className="col-xs-12 col-sm-6 col-md-3 footer-about">
+        <h5>Información</h5>
+        <ul className="list-unstyled">
+          <li>
+            <a href="/nosotros">Acerca de nosotros</a>
+          </li>
+          <li>
+            <a href="#">Política de privacidad</a>
+          </li>
+        </ul>
+      </div>
+      <div className="col-xs-12 col-sm-6 col-md-3 footer-redes">
+        <h5>Redes Sociales</h5>
+        <div className="social-icons">
+          <a
+            className="youtube"
+            href="https://www.youtube.com/@bahiamobility-Camiones/featured"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {({ isSubmitting }) => (
-              <Form>
-                <Field type="email" name="email" placeholder="Email" required />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="error-message"
-                />
-                <button type="submit" disabled={isSubmitting}>
-                  Suscríbete
-                </button>
-              </Form>
-            )}
-          </Formik>
+            <FaYoutube />
+          </a>
+          <a
+            className="instagram"
+            href="https://www.instagram.com/bahiamobility/?hl=es-la"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiOutlineInstagram />
+          </a>
         </div>
-        <div className="col-xs-12 col-sm-6 col-md-3">
-          <h5>Contacto</h5>
-          <p>
-            Hipólito Yrigoyen 3871, B8000 Bahía Blanca, Provincia de Buenos
-            Aires
-          </p>
-          <p>Email: ventas@fotonbahia.com.ar</p>
-          <p>Teléfono: 0291 446-0146</p>
-        </div>
-      <hr />
-      <div className="col-xs-12">
-        <p className="text-center">
+      </div>
+      <div className="col-xs-12 col-sm-6 col-md-3 footer-col">
+        <h5>Enterate las novedades</h5>
+        {/* Utiliza Formik para manejar el formulario */}
+        <Formik
+          initialValues={{ email: "" }}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <Field type="email" name="email" placeholder="Email" required />
+              <button type="submit" disabled={isSubmitting}>
+                Suscríbete
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+      <div className="col-xs-12 col-sm-6 col-md-3 footer-contact">
+        <h5>Contacto</h5>
+        <p>
+          Hipólito Yrigoyen 3871, B8000 Bahía Blanca, Provincia de Buenos
+          Aires
+        </p>
+        <p>Email: ventas@fotonbahia.com.ar</p>
+        <p>Teléfono: 0291 446-0146</p>
+      </div>
+      <div className="col-xs-12 copyright">
+        <p className="copyright-text">
           © 2024 SyM Soluciones IT. Todos los derechos reservados.
         </p>
       </div>

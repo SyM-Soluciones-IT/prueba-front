@@ -5,6 +5,9 @@
   flex-wrap: wrap;
 }
 .principal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1em;
 }
 
@@ -36,6 +39,9 @@
   font-family: 'Poppins', sans-serif;;
   font-size: 1em;
   font-weight: 500;
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 .img-home{
@@ -46,8 +52,6 @@
 }
 
 #productos{
-  margin-left: 10%;
-  margin-right: 10%;
   margin-bottom: 2em;
 }
 
@@ -85,5 +89,9 @@
   #marcas{
     background-color: #ca173e;
     color: white;
+  }
+
+  #repuestos{
+    width: 100%;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Button, Modal } from "react-bootstrap";
 import { RiWhatsappLine, RiMailLine, RiPhoneLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,17 @@ const AfterSell = ({isHome=false}) => {
   const handleCloseModal = () => setShowModal(false);
   const navigate = useNavigate();
 
+  // Add event listener for window load event
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top when the page loads
+    });
+    return () => {
+      window.removeEventListener("load", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  };
+  },  []);
   const scrollToTop = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
