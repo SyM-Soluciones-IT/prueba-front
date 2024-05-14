@@ -23,9 +23,9 @@
   justify-content: center;
 }
 
-.image-card {
+.image-card-brands {
   width: 200px; /* Ancho fijo de la tarjeta */
-  height: 220px !important; /* Altura fija de la tarjeta */
+  height: 220px; /* Altura fija de la tarjeta */
   text-align: center;
   overflow: hidden; /* Oculta el contenido que se desborda */
   margin: 10px;

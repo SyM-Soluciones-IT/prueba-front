@@ -24,7 +24,7 @@ const MarcaList = () => {
       <div className="marca-list">
         {marcas.map(marca => (
           <div key={marca._id} className="marca-item">
-            <Card className="image-card">
+            <Card className="image-card-brands">
               <CardBody className="image-card-body">
                 <CardImg src={marca.image} alt={marca.name} className="card-img" />
               </CardBody>
