@@ -3,6 +3,7 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { FaYoutube } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Swal from "sweetalert2"; // Asegúrate de importar correctamente SweetAlert2
 import { subscribeToNewsletter } from "../../services/services"; // Importa la función de API
 import "./Footer.css"; // Estilo personalizado para el footer
 
@@ -17,11 +18,23 @@ const Footer = () => {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       await subscribeToNewsletter(values.email); // Utiliza la función de API para suscribirse al newsletter
-      alert("¡Gracias por suscribirte a nuestro newsletter!");
+      Swal.fire({
+        icon: "success",
+        title: "¡Suscripción exitosa!",
+        text: "Gracias por suscribirse a nuestro newsletter.",
+      });
       resetForm();
     } catch (error) {
       console.error("Error al suscribirse al newsletter:", error);
-      alert("Hubo un error al suscribirse al newsletter. Por favor, intenta nuevamente más tarde.");
+      let errorMessage = "Hubo un error al suscribirse al newsletter. Por favor, intenta nuevamente más tarde.";
+      if (error.response && error.response.data && error.response.data.error) {
+        errorMessage = error.response.data.error;
+      }
+      Swal.fire({
+        icon: "error",
+        title: "Error al suscribirse al newsletter",
+        text: errorMessage,
+      });
     }
     setSubmitting(false);
   };
@@ -61,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="col-xs-12 col-sm-6 col-md-3 footer-col">
-        <h5>Enterate las novedades</h5>
+        <h5>Entérate de las novedades</h5>
         {/* Utiliza Formik para manejar el formulario */}
         <Formik
           initialValues={{ email: "" }}
@@ -81,8 +94,7 @@ const Footer = () => {
       <div className="col-xs-12 col-sm-6 col-md-3 footer-contact">
         <h5>Contacto</h5>
         <p>
-          Hipólito Yrigoyen 3871, B8000 Bahía Blanca, Provincia de Buenos
-          Aires
+          Hipólito Yrigoyen 3871, B8000 Bahía Blanca, Provincia de Buenos Aires
         </p>
         <p>Email: ventas@fotonbahia.com.ar</p>
         <p>Teléfono: 0291 446-0146</p>
