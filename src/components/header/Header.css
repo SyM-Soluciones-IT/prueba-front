@@ -1,12 +1,12 @@
 header{
-  background-color: #ffffff !important;
+  background-color: #ffffff ;
   position: sticky;
-  top: 0px!important;
+  top: 0px;
   z-index: 100;
 }
 
 .logo-bahia{
-  height: 85px !important;
+  height: 85px ;
 }
 
 h1{
@@ -60,12 +60,12 @@ h1{
 }
 
 .nav-right{
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  position: fixed !important;
-  top: 90px !important;
-  right: 20px !important;
+  display: flex ;
+  flex-direction: row ;
+  align-items: center ;
+  position: fixed ;
+  top: 90px ;
+  right: 20px ;
   margin-top: 8px;
 }
 
@@ -80,17 +80,17 @@ h1{
 
 .dropdown{
   display: flex;
-  align-items: center !important;
+  align-items: center ;
 }
 
 #nav-dropdown{
-  color: white !important;
+  color: white ;
 }
 
 .dropdown-menu{
-  background-color: #101010 !important;
-  color: white !important;
-  border: transparent !important;
+  background-color: #101010 ;
+  color: white ;
+  border: transparent ;
   padding: 0.5rem;
   padding-top: 0;
   position: absolute;
@@ -114,23 +114,19 @@ h1{
 }
 
 
-
-
-@media (min-width: 540px){
+/* Pantallas grandes */
+@media (min-width: 992px) {
   h1{
     display: block;
   }
-}
 
-/* Pantallas grandes */
-@media (min-width: 992px) {
   .mobile-navbar {
     height: 56px;
   }
 
   .nav-link:hover, .nav-link.active{
-    color: white !important;
-    background-color: #ca173e !important;
+    color: white ;
+    background-color: #ca173e ;
     border-radius: 0.5rem;
   }
 
@@ -140,12 +136,12 @@ h1{
   }
 
   .ml-auto .nav-link {
-    margin-top: 0!important; /* Elimina el margen en pantallas grandes */
+    margin-top: 0; /* Elimina el margen en pantallas grandes */
   }
   
   .dropdown-item:hover{
-    color: white !important;
-    background-color: #ca173e !important;
+    color: white ;
+    background-color: #ca173e ;
   }
 
   .nav-link-inicio{
@@ -161,11 +157,11 @@ h1{
   }
 
   .dropdown-toggle::after{
-    font-size: x-large !important;
-    vertical-align: middle !important;
+    font-size: x-large ;
+    vertical-align: middle ;
   }
 
   #basic-nav-dropdown{
-    margin-right: 5px !important;
+    margin-right: 5px ;
   }
 }

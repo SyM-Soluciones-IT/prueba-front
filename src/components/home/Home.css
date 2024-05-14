@@ -30,10 +30,6 @@
   padding: .5em;
 }
 
-.principal-titulo-seccion{
-  display: none;
-}
-
 .principal-texto-home{
   text-align: center;
   font-family: 'Poppins', sans-serif;;
@@ -84,7 +80,7 @@
     font-size: 2.5rem;
   }
   .principal-texto-home{
-    font-size: 1.2em !important;
+    font-size: 1.2em ;
   }
   #marcas{
     background-color: #ca173e;

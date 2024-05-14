@@ -22,7 +22,7 @@
 }
 .descripcion-seccion{
   margin-bottom: 0;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .img-auto{
@@ -107,7 +107,7 @@
 
 .btn-vehicles{
   background-color: #321f56;
-  border:#321f56 !important;
+  border:#321f56;
   margin-bottom: 1em;
 }
 
@@ -138,8 +138,8 @@
 }
 
 .dropdown-menu{
-  width: 100% !important;
-  border-radius: 0px !important;
+  width: 100%;
+  border-radius: 0px ;
 }
 
 
@@ -162,8 +162,8 @@
 
 .nav-dropdown-mobile .dropdown-item.active,
 .nav-dropdown-mobile .dropdown-item:hover {
-  background-color: #ca173e !important;
-  color: white !important;
+  background-color: #ca173e ;
+  color: white ;
 }
 
 .spinner{
@@ -194,7 +194,7 @@
   margin: 0;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  height: 100%;
+  height: 100% !important;
 }
 .carousel-vehiculos{
   border-bottom: 1px solid #101010;
@@ -216,11 +216,12 @@
 
 .contenedor-descripcion-seccion{
   margin: 0 0 2em 0;
+  width: 80%;
 }
 @media (min-width: 768px) {
   .mb-4{
     display: flex;
-    justify-content: space-around !important;
+    justify-content: space-around;
   }
   
   .btn-vehicles:hover{
@@ -233,8 +234,8 @@
     border-color: #321f56; 
   }
   .nav-dropdown-mobile{
-    display: flex !important;
-    justify-content: center !important;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -253,7 +254,6 @@
   }
 
   .contenedor-descripcion-seccion{
-    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -263,7 +263,7 @@
     margin-right: 5px;
   }
   .nav-link-categorias:last-of-type{
-    border-right: none !important;
+    border-right: none;
     margin-right: 0;
   }
   
