@@ -28,7 +28,7 @@ const Categories = () => {
 
   return (
     <Container className='d-flex justify-content-center'>
-      <div className="d-flex flex-wrap justify-content-center">
+      <div className="d-flex flex-wrap justify-content-center div-container">
         {categories.map(category => (
           <div key={category._id} className="col-xl-2 col-lg-2 col-md-4 col-sm-6 m-3 div-principal-category" >
               <div className='div-category' >
