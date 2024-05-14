@@ -39,7 +39,7 @@ const AfterSell = ({isHome=false}) => {
           <Card className="tarjeta">
           <Card.Title className="tarjeta-titulo">Garantía</Card.Title>
             <Card.Body className="text-center tarjeta-body">
-              <Card.Img variant="bottom" className="imagen-repuestos"  src="https://i.ibb.co/ZNYYxQb/images.jpg" />
+              <Card.Img variant="bottom" className="imagen-repuestos" src="https://i.ibb.co/6RT7p3Y/foton-garantia.jpg" />
               <Card.Text className="tarjeta-texto" >
                 Nuestros vehículos cuentan con una garantía de 100.000kms o 3 años lo que suceda primero.
               </Card.Text>
@@ -48,7 +48,7 @@ const AfterSell = ({isHome=false}) => {
         <Card className="tarjeta">
           <Card.Title className="tarjeta-titulo">Repuestos</Card.Title>
             <Card.Body className="text-center tarjeta-body">
-              <Card.Img className="imagen-repuestos" variant="bottom"  src="https://i.ibb.co/5xnhKH5/repuestos-originales.jpg" />
+              <Card.Img className="imagen-repuestos" variant="bottom" src="https://i.ibb.co/5xnhKH5/repuestos-originales.jpg" />
               <Card.Text className="tarjeta-texto" >
                 En Bahia Mobility todos los repuestos son originales, garantizando así que tu vehículo siempre esté en perfecto estado.
               </Card.Text>
@@ -59,7 +59,7 @@ const AfterSell = ({isHome=false}) => {
         <Card className="tarjeta">
             <Card.Title className="tarjeta-titulo">Asistencia Técnica</Card.Title>
             <Card.Body className="text-center tarjeta-body">
-              <Card.Img className="imagen-repuestos" variant="bottom" src="https://i.ibb.co/mzVTrnQ/2024-03-13.jpg" />
+              <Card.Img className="imagen-repuestos" variant="bottom" src="https://i.ibb.co/MRnW92H/mecanico.jpg" />
               <Card.Text className="tarjeta-texto">
               Contamos con un equipo de profesionales técnicos para solucionar cualquier duda o consulta. Cualquier información puede enviarlo a través de nuestro formulario de contacto, por WhatsApp o al número del taller.
               </Card.Text>

@@ -14,6 +14,10 @@ const Useds = ({ onSectionChange, selectedSection }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Estado y constantes para la paginación
+  const [currentPage, setCurrentPage] = useState(1);
+  const usedsPerPage = 6;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,7 +31,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
       }
     };
     fetchData();
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
 
   // Add event listener for window load event
@@ -62,12 +66,18 @@ const Useds = ({ onSectionChange, selectedSection }) => {
     setShowModal(false);
   };
 
+  // Paginación
+  const indexOfLastUsed = currentPage * usedsPerPage;
+  const indexOfFirstUsed = indexOfLastUsed - usedsPerPage;
+  const currentUseds = useds.slice(indexOfFirstUsed, indexOfLastUsed);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="d-flex flex-column align-items-center">
       <h2 className="principal-titulo-seccion">{USEDS_TEXT.title}</h2>
       <div className="separador">
         <p className="repuestos-texto">{USEDS_TEXT.description}</p>
-        <p className="repuestos-texto">{USEDS_TEXT.description2}</p>
       </div>
       {loading && (
         <div className="spinner">
@@ -77,44 +87,62 @@ const Useds = ({ onSectionChange, selectedSection }) => {
         </div>
       )}
       {!loading && (
-      <div className="row div-row">
-      {useds.map((used) => (
-        <div key={used._id} className="col-md-4 mb-4 div-vehiculos">
-          <div className="card-productos">
-            <Carousel
-              className="carousel-vehiculos"
-              interval={null}
-              controls={used.image.length > 1 || used.video.length > 0}
-            >
-              {used.image.map((image, index) => (
-                <Carousel.Item className="img-auto" key={index}>
-                  <img
-                    className="d-block w-100 image-card img-fluid"
-                    loading="lazy"
-                    src={image}
-                    alt={`Slide ${index}`}
-                  />
-                </Carousel.Item>
-              ))}
-            </Carousel>
-            <div className="card-body-productos">
-              <h5 className="card-title-vehicles">{used.name}</h5>
-              {["engine", "power", "gearbox", "load", "year"].map((field) => (
-                <p key={field} className="card-text" >
-                  <strong>{field === "engine" ? "Motor" : field === "power" ? "Potencia" : field === "gearbox" ? "Transmisión" : field === "load" ? "PBT" : "Año"}:</strong> {used[field]}
-                </p>
-              ))}
-              {used.datasheet && used.datasheet !== "" && (
-                <a href={used.datasheet} target="_self" rel="noopener noreferrer" className="btn">Descargar Ficha Técnica</a>
-              )}
-              <button className="btn mb-2 btn-primary"  onClick={() => handleCotizarClick(used)}>Cotiza Aquí</button>
+        <div className="row div-row">
+          {currentUseds.map((used) => (
+            <div key={used._id} className="col-md-4 mb-4 div-vehiculos">
+              <div className="card-productos">
+                <Carousel
+                  className="carousel-vehiculos"
+                  interval={null}
+                  controls={used.image.length > 1 || used.video.length > 0}
+                >
+                  {used.image.map((image, index) => (
+                    <Carousel.Item className="img-auto" key={index}>
+                      <img
+                        className="d-block w-100 image-card img-fluid"
+                        loading="lazy"
+                        src={image}
+                        alt={`Slide ${index}`}
+                      />
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+                <div className="card-body-productos">
+                  <h5 className="card-title-vehicles">{used.name}</h5>
+                  {["engine", "power", "gearbox", "load", "year"].map((field) => (
+                    <p key={field} className="card-text">
+                      <strong>{field === "engine" ? "Motor" : field === "power" ? "Potencia" : field === "gearbox" ? "Transmisión" : field === "load" ? "PBT" : "Año"}:</strong> {used[field]}
+                    </p>
+                  ))}
+                  {used.datasheet && used.datasheet !== "" && (
+                    <a href={used.datasheet} target="_self" rel="noopener noreferrer" className="btn">Descargar Ficha Técnica</a>
+                  )}
+                  <button className="btn mb-2 btn-primary" onClick={() => handleCotizarClick(used)}>Cotiza Aquí</button>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-        ))}
-      </div>
       )}
-      {/* Modal aquí */}
+      {/* Paginación */}
+      <nav>
+        <ul className="pagination justify-content-center">
+          {Array.from({ length: Math.ceil(useds.length / usedsPerPage) }, (_, i) => (
+            <li key={i + 1} className={`page-item ${currentPage === i + 1 ? "active" : ""}`}>
+              <button
+                onClick={() => {
+                  paginate(i + 1);
+                  setTimeout(() => { window.scrollTo(0, 0); }, 100);
+                }}
+                className="page-link"
+              >
+                {i + 1}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {/* Modal */}
       {showModal && (
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
@@ -122,9 +150,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
           </Modal.Header>
           <Modal.Body>
             {selectedUsed && (
-              <p>
-                Elija una opción para cotizar el usado {selectedUsed.name}:
-              </p>
+              <p>Elija una opción para cotizar el usado {selectedUsed.name}:</p>
             )}
             <Button
               className="btn-primary mb-2"

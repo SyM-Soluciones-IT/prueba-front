@@ -18,6 +18,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: fit-content;
 }
 .descripcion-seccion{
   margin-bottom: 0;
@@ -88,6 +89,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0.5em;
 }
 
 /* Estilo para los botones en la navbar de categorías */
@@ -97,14 +99,6 @@
   color: white;
   padding: 1px 5px 2px;
   width: fit-content;
-}
-
-/* Estilo para el botón de despliegue en la navbar de categorías */
-.navbar-toggler {
-  background-color: gray;
-  color: white;
-  margin-bottom: 5px;
-  border: #101010 1px solid;
 }
 
 .contenedor{
@@ -146,7 +140,6 @@
 .dropdown-menu{
   width: 100% !important;
   border-radius: 0px !important;
-  /* transform: translate(0px, 23px) !important; */
 }
 
 
@@ -190,14 +183,18 @@
   text-align: center;
 }
 
-.card-body-productos a{
-  margin-bottom: 0.5rem;
+.card-body-productos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .image-card{
   margin: 0;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  height: 100%;
 }
 .carousel-vehiculos{
   border-bottom: 1px solid #101010;
@@ -216,13 +213,11 @@
   height: 50px;
   align-content: center;
 }
-@media (min-width: 768px) {
 
-  .card-img-top{
-    width: 70%;
-    object-fit: contain !important;
-    align-self: center;
-  }
+.contenedor-descripcion-seccion{
+  margin: 0 0 2em 0;
+}
+@media (min-width: 768px) {
   .mb-4{
     display: flex;
     justify-content: space-around !important;
@@ -257,27 +252,19 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
-  .card-body-productos{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 300px;
-  }
-  .image-card{
-    height: 250px;
-  }
-
   .contenedor-descripcion-seccion{
-    margin: 0 0 2em 0;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
+  .nav-link-categorias{
+    margin-right: 5px;
+  }
   .nav-link-categorias:last-of-type{
     border-right: none !important;
+    margin-right: 0;
   }
   
   .nav-dropdown-mobile {
@@ -290,5 +277,8 @@
     background-color: #ca173e;
     color: white;
     border-color: #101010;
+  }
+  .navbar-categorias{
+    margin: 0.5em 0;
   }
 }

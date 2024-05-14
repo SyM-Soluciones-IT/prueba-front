@@ -22,6 +22,17 @@ h1{
   padding-right: 3%;
 }
 
+/* Estilo para el botón de despliegue en la navbar de categorías */
+.navbar-toggler {
+  background-color: gray;
+  border: #101010 1px solid;
+}
+
+/* Cambia el color del icono del navbar-toggler */
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
 .nav-link{
   border-radius: 0.5rem;
 }
@@ -80,9 +91,8 @@ h1{
   background-color: #101010 !important;
   color: white !important;
   border: transparent !important;
-  padding: 0 0.5rem;
-}
-.navbar-nav .dropdown-menu{
+  padding: 0.5rem;
+  padding-top: 0;
   position: absolute;
 }
 

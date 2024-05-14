@@ -148,7 +148,7 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
           </div>
           <div className="row div-row">
             {currentVehicles.map((vehicle) => (
-              <div key={vehicle._id} className="col-md-4 mb-4 div-vehiculos">
+              <div key={vehicle._id} className="mb-4 div-vehiculos">
                 <div className="card-productos" >
                   <Carousel className="carousel-vehiculos" interval={null} controls={vehicle.image.length > 1 || vehicle.video.length > 0}>
                     {vehicle.image.map((image, index) => (
