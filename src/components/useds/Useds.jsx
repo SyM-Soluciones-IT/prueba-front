@@ -86,7 +86,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
           </Spinner>
         </div>
       )}
-      {!loading && (
+      {!loading && currentUseds.length > 0 && (
         <div className="row div-row">
           {currentUseds.map((used) => (
             <div key={used._id} className="col-md-4 mb-4 div-vehiculos">
@@ -124,6 +124,9 @@ const Useds = ({ onSectionChange, selectedSection }) => {
           ))}
         </div>
       )}
+      {!loading && currentUseds.length === 0 && (
+        <p>No hay vehículos usados en este momento.</p>
+      )}
       {/* Paginación */}
       <nav>
         <ul className="pagination justify-content-center">
@@ -158,7 +161,7 @@ const Useds = ({ onSectionChange, selectedSection }) => {
                 const mensaje = encodeURIComponent(
                   `Hola, quiero cotizar el usado ${selectedUsed.name}`
                 );
-                window.open(`https://wa.me/+5492916446200/?text=${mensaje}`);
+                window.open(`https://wa.me/+5492914460146/?text=${mensaje}`);
               }}
             >
               Cotizar por WhatsApp

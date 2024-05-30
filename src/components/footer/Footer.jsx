@@ -96,7 +96,7 @@ const Footer = () => {
         <p>
           Hipólito Yrigoyen 3871, B8000 Bahía Blanca, Provincia de Buenos Aires
         </p>
-        <p>Email: ventas@fotonbahia.com.ar</p>
+        <p>Email: ventas@bahiafoton.com.ar</p>
         <p>Teléfono: 0291 446-0146</p>
       </div>
       <div className="col-xs-12 copyright">

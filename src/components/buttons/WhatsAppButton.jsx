@@ -9,7 +9,7 @@ const WhatsAppButton = () => {
 
   const handleClick = () => {
 
-    window.open(`https://wa.me/+5492916446200/?text=${mensaje}`, '_blank');
+    window.open(`https://wa.me/+5492914460146/?text=${mensaje}`, '_blank');
 
   };
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://penamatias.alwaysdata.net/api";
+const API_BASE_URL = "https://bahiafoton.com.ar/api";
 
 export const subscribeToNewsletter = async (email) => {
   try {
