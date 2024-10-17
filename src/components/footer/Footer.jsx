@@ -65,7 +65,7 @@ const Footer = () => {
           </a>
           <a
             className="instagram"
-            href="https://www.instagram.com/bahiamobility/?hl=es-la"
+            href="https://www.instagram.com/bahia_mobility/?hl=es-la"
             target="_blank"
             rel="noopener noreferrer"
           >
