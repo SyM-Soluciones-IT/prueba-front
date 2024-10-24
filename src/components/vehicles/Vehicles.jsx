@@ -118,6 +118,7 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const resetPagination = () => setCurrentPage(1);
+  console.log(currentVehicles.map((vehicle) => vehicle));
 
   return (
     <div className="contenedor text-center d-flex flex-column align-items-center">
@@ -150,13 +151,13 @@ const Vehicles = ({ onSectionChange, selectedSection }) => {
             {currentVehicles.map((vehicle) => (
               <div key={vehicle._id} className="mb-4 div-vehiculos">
                 <div className="card-productos" >
-                  <Carousel className="carousel-vehiculos" interval={null} controls={vehicle.image.length > 1 || vehicle.video.length > 0}>
-                    {vehicle.image.map((image, index) => (
+                  <Carousel className="carousel-vehiculos" interval={null} controls={vehicle.images.length > 1 || vehicle.videos.length > 0}>
+                    {vehicle.images.map((image, index) => (
                       <Carousel.Item className="img-auto" key={index}>
                         <img className="d-block w-100 image-card img-fluid" loading="lazy" src={image} alt={`Slide ${index}`} />
                       </Carousel.Item>
                     ))}
-                    {vehicle.video.length > 0 && vehicle.video.map((video, index) => (
+                    {vehicle.videos.length > 0 && vehicle.videos.map((video, index) => (
                       <Carousel.Item className="img-auto" key={index}>
                         <iframe className="img-auto iframe-vehiculos" loading="lazy" src={video} title={`Video ${index}`} allowFullScreen border="transparent"/>
                       </Carousel.Item>
